@@ -1,0 +1,42 @@
+<div id="headerContent">
+  <header class="page-header header container-fluid">
+    <nav class="navbar navbar-expand-md sticky-top">
+      <a class="navbar-brand " [routerLink]="['']">Logo</a>
+      <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+        data-bs-target="#main-navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main-navigation">
+        <div class="navbar-nav">
+          <app-login></app-login>
+          <a class="nav-item nav-link" [routerLink]="['services']">Services</a>
+          <a class="nav-item nav-link" [routerLink]="['products']">Products</a>
+          <a class="nav-item nav-link" [routerLink]="['about']">About Company</a>
+          <a class="nav-item nav-link" [routerLink]="['team']">Meet Team</a>
+          <a class="nav-item nav-link" [routerLink]="['contact-us']">Contact Us</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="offset-lg-2 col-lg-6 col-md-6 col-sm-12 whitespace align-self-center">
+          <span [hidden]="this.service.get_isRegister()"><app-register></app-register></span>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 d-none d-lg-block d-print-block">
+        <img class="pull-right my-img" />
+        <p class="my-pullTxt">Expertise. Commitment. Value.</p>
+      </div>
+      <div class="col-12 d-none d-md-block d-lg-none text-center">
+        <img class="my-img-md" />
+        <p class="my-pullTxt-md">Expertise. Commitment. Value.</p>
+      </div>
+      <div class="col-12 d-none d-sm-block d-md-none text-center">
+        <img class="my-img-sm" />
+        <p class="my-pullTxt-sm">Expertise. Commitment. Value.</p>
+      </div>
+    </div>
+</div>
+</header>
+</div>
+
+

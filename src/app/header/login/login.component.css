@@ -1,0 +1,11 @@
+a:hover{
+    color: white;
+    cursor: pointer;
+}
+a{
+    color: grey;
+}
+.login-margin{
+    padding-left: 1em;
+    padding-right: 1em;
+}

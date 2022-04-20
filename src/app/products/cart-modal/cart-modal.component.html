@@ -1,0 +1,83 @@
+<ng-template #Cart let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Item List:</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Item:</p>
+                </div>
+                <div class="offset-2 col-md-4 align-items-end">
+                    <p>Price:</p>
+                </div>
+            </div>
+            <div class="row" *ngFor="let item of items">
+                <div class="col-md-6">
+                    <p>{{item.name}}</p>
+                </div>
+                <div class="offset-2 col-md-4 align-items-end">
+                    <p>{{item.price}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="row">
+            <div class="col-md-6">
+                <p>No. of Items:</p>
+                <p>{{ getCount(items)}}</p>
+            </div>
+            <div class="offset-2 col-md-4 align-items-end">
+                <p>Total:</p>
+                <p>PHP {{ getTotal(items) }}</p>
+            </div>
+        </div>
+      <button type="button" class="btn btn-dark" (click)="placeOrderPost(items)">Place Order</button>
+      <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<ng-template #Orders let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Item List:</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Item:</p>
+                </div>
+                <div class="offset-2 col-md-4 align-items-end">
+                    <p>Price:</p>
+                </div>
+            </div>
+            <div class="row" *ngFor="let item of orderItems">
+                <div class="col-md-6">
+                    <p>{{item.name}}</p>
+                </div>
+                <div class="offset-2 col-md-4 align-items-end">
+                    <p>{{item.price}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="row">
+            <div class="col-md-6">
+                <p>No. of Items:</p>
+                <p>{{ getCount(orderItems)}}</p>
+            </div>
+            <div class="offset-2 col-md-4 align-items-end">
+                <p>Total:</p>
+                <p>PHP {{ getTotal(orderItems) }}</p>
+            </div>
+        </div>
+      <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+  <a class="dropdown-item" (click)="showOrders(Orders)">View Order(s)</a>
+  <a class="dropdown-item" (click)="showCart(Cart)">View Cart</a>

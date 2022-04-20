@@ -1,0 +1,32 @@
+<div class="dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="dropdownMenu2" data-bs-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false" [hidden]="!this.service.userShow">
+      Login
+    </a>
+    <div class="dropdown-menu login-margin">
+      <form autocomplete="off" [formGroup]="fLogin">
+        <div class="form-group">
+          <label class="text-black">Username</label>
+          <input type="text" class="form-control" formControlName="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+          <label class="text-black" for="password">Password</label>
+          <input type="password" class="form-control" formControlName="password" placeholder="Password">
+          <br />
+        </div>
+        <a class="btn bg-dark btn-sm text-white" (click)="login()">Login</a>
+        <div>
+          <p class="float-end font-sm" [hidden]="!this.service.get_isRegister()">Don't have an Account?
+            <a id="lblRegister" class="text-black" (click)="showRegister()">Register!</a>
+          </p>
+        </div>
+      </form>
+    </div>
+    <a class="nav-link dropdown-toggle" id="dropdownMenu2" data-bs-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false" [hidden]="this.service.userShow">{{this.service.login}}
+    </a>
+    <div class="dropdown-menu">
+      <app-cart-modal></app-cart-modal>
+      <a class="dropdown-item" (click)="logout()" [hidden]="this.service.userShow">Logout</a>
+    </div>
+  </div>

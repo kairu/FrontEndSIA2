@@ -1,0 +1,10 @@
+.error{
+    margin-top: 5vh;
+    background-color: white;
+    
+}
+.errorTxt{
+    font-size: 1em;
+    color: red;
+    
+}
